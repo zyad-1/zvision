@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZVISION Registration</title>
+    <link rel="stylesheet" href="css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/public_html/index.html" class="logo"><img src="logo.png" class="logo"></a>
+        <select id="language-select">
+            <option value="en" data-icon="https://www.countryflags.io/us/flat/32.png">English</option>
+            <option value="ar" data-icon="https://www.countryflags.io/sa/flat/32.png">Arabic</option>
+        </select>
+    </nav>
+    <div class="container">
+        <h1 data-en="Join To ZVISION Team" data-ar="انضم الي فريق ZVISION">Join To ZVISION Team</h1>
+        <form id="registration-form">
+            <label for="fname" data-en="First Name:" data-ar="الاسم الأول:">First Name:</label>
+            <div class="fn">
+                <input type="text" id="fname" name="fname" required>
+            </div>
+            <label for="lname" data-en="Last Name:" data-ar="اسم العائلة:">Last Name:</label>
+            <div class="ln">
+                <input type="text" id="lname" name="lname" required>
+            </div>
+            <label for="age" data-en="Age:" data-ar="العمر:">Age:</label>
+            <div class="age">
+                <input type="number" id="age" name="age" required>
+            </div>
+            <label for="email" data-en="Email:" data-ar="البريد الإلكتروني:">Email:</label>
+            <div class="email">
+                <input type="email" id="email" name="email" required>
+            </div>
+            <label for="phone" data-en="Phone Number:" data-ar="رقم الهاتف:">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="con" data-en="Additional Way To Communicate:" data-ar="طريقة إضافية للتواصل:">Additional Way To Communicate:</label>
+            <input type="text" id="con" name="con" required>
+            <label for="skill" data-en="Skill:" data-ar="المهارة:">Skill:</label>
+            <select id="skill" name="skill" required>
+                <option value="video-editing" data-en="Video Editing" data-ar="تحرير الفيديو">Video Editing</option>
+                <option value="graphic-design" data-en="Graphic Design" data-ar="التصميم الجرافيكي">Graphic Design</option>
+            </select>
+            <label for="apps" data-en="Applications You Can Use:" data-ar="التطبيقات التي يمكنك استخدامها:">Applications You Can Use:</label>
+            <div class="apps">
+                <input type="text" id="apps" name="apps" required>
+            </div>
+            <label for="experience" data-en="Years of Experience:" data-ar="سنوات الخبرة:">Years of Experience:</label>
+            <div class="ex">
+                <input type="number" id="experience" name="experience" required>
+            </div>
+            <label for="portfolio-link" data-en="Portfolio Link:" data-ar="رابط اعمالك:">Portfolio Link:</label>
+            <div class="pl">
+                <input type="url" id="portfolio-link" name="portfolio-link" required>
+            </div>
+            <button type="submit" class="submit-button" data-en="Submit" data-ar="إرسال">Submit</button>
+        </form>
+        <dialog id="success-dialog">
+            <p data-en="Your information has been sent successfully!" data-ar="تم إرسال معلوماتك بنجاح!">
+                Your information has been sent successfully!
+            </p>
+            <button id="close-success-dialog" data-en="Close" data-ar="إغلاق">Close</button>
+        </dialog>
+        <dialog id="error-dialog">
+            <p data-en="There was an error sending your information. Please try again." data-ar="حدث خطأ أثناء إرسال معلوماتك. حاول مرة أخرى.">
+                There was an error sending your information. Please try again.
+            </p>
+            <button id="close-error-dialog" data-en="Close" data-ar="إغلاق">Close</button>
+        </dialog>
+        <dialog id="offline-dialog">
+            <p data-en="You are offline. Please check your internet connection and try again." data-ar="أنت غير متصل بالإنترنت. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.">
+                You are offline. Please check your internet connection and try again.
+            </p>
+            <button id="close-offline-dialog" data-en="Close" data-ar="إغلاق">Close</button>
+        </dialog>
+        </head>
+
+        <body>
+    </div>
+    <link rel=" stylesheet " href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css ">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js "></script>
+    <script src="script.js "></script>
+    </body>
+
+</html>
