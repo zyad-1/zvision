@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             age: formData.get('age'),
             email: formData.get('email'),
             phone: phoneInput.getNumber(), // جمع رقم الهاتف مع كود الدولة
+            con: formData.get('con'),
             skill: formData.get('skill'),
             apps: formData.get('apps'),
             experience: formData.get('experience'),
@@ -63,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
             Age: ${data.age}\n
             Email: ${data.email}\n
             Phone: ${data.phone}\n
+            Additional Way To Communicate: ${data.con}\n
             Skill: ${data.skill}\n
             Applications: ${data.apps}\n
             Experience: ${data.experience}\n
