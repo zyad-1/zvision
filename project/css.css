@@ -170,6 +170,7 @@ select {
     background-color: #0035c7;
     color: #ffffff;
     padding: 10px 20px;
+    font-family: 'Cairo', sans-serif;
     font-size: 20px;
     border: none;
     cursor: pointer;
@@ -294,4 +295,11 @@ dialog button:hover {
     .container {
         max-width: 75%;
     }
+}
+
+#join-whatsapp-message {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+    display: none;
 }
