@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeSuccessDialogButton = document.getElementById('close-success-dialog');
     const closeErrorDialogButton = document.getElementById('close-error-dialog');
     const closeOfflineDialogButton = document.getElementById('close-offline-dialog');
+    const whatsappJoinedInput = document.getElementById('whatsapp-joined');
+    const joinWhatsappMessage = document.getElementById('join-whatsapp-message');
     const languageSelect = document.getElementById("language-select");
 
     // تفعيل مكتبة intl-tel-input
@@ -26,6 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!navigator.onLine) {
             offlineDialog.showModal();
+            return;
+        }
+
+        // التحقق مما إذا كان المستخدم قد انضم إلى مجموعة الواتساب
+        if (whatsappJoinedInput.value === "false") {
+            const whatsappWindow = window.open('https://chat.whatsapp.com/E5qcOCo9Y8ULN9sQxkIqQi', '_blank');
+            joinWhatsappMessage.style.display = 'block';
             return;
         }
 
@@ -121,5 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // تحديث اللغة الافتراضية عند التحميل
     languageSelect.dispatchEvent(new Event('change'));
 });
