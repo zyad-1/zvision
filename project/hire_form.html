@@ -11,7 +11,7 @@
 
 <body>
     <nav class="navbar">
-        <a href="/zvision/index.html" class="logo"><img src="logo.png" class="logo"></a>
+        <a href="/public_html/index.html" class="logo"><img src="logo.png" class="logo"></a>
         <select id="language-select">
             <option value="en" data-icon="https://www.countryflags.io/us/flat/32.png">English</option>
             <option value="ar" data-icon="https://www.countryflags.io/sa/flat/32.png">Arabic</option>
@@ -38,8 +38,10 @@
             </div>
             <label for="phone" data-en="Phone Number:" data-ar="رقم الهاتف:">Phone Number:</label>
             <input type="tel" id="phone" name="phone" required>
+
             <label for="con" data-en="Additional Way To Communicate:" data-ar="طريقة إضافية للتواصل:">Additional Way To Communicate:</label>
             <input type="text" id="con" name="con" required>
+
             <label for="skill" data-en="Skill:" data-ar="المهارة:">Skill:</label>
             <select id="skill" name="skill" required>
                 <option value="video-editing" data-en="Video Editing" data-ar="تحرير الفيديو">Video Editing</option>
@@ -57,6 +59,11 @@
             <div class="pl">
                 <input type="url" id="portfolio-link" name="portfolio-link" required>
             </div>
+            <input type="hidden" id="whatsapp-joined" name="whatsapp-joined" value="false">
+
+            <p id="join-whatsapp-message" style="color: red; display: none;" data-en="Please join our WhatsApp group to complete your registration." data-ar="يرجى الانضمام إلى مجموعة الواتساب الخاصة بنا لإكمال التسجيل.">
+                Please join our WhatsApp group to complete your registration.
+            </p>
             <button type="submit" class="submit-button" data-en="Submit" data-ar="إرسال">Submit</button>
         </form>
         <dialog id="success-dialog">
