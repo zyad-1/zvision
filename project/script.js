@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('registration-form');
+    const submitButton = form.querySelector('.submit-button');
     const phoneInputField = document.querySelector("#phone");
     const successDialog = document.getElementById('success-dialog');
     const errorDialog = document.getElementById('error-dialog');
@@ -9,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeOfflineDialogButton = document.getElementById('close-offline-dialog');
     const whatsappJoinedInput = document.getElementById('whatsapp-joined');
     const joinWhatsappMessage = document.getElementById('join-whatsapp-message');
+    const confirmWhatsappJoinBtn = document.getElementById('confirm-whatsapp-join-btn');
     const languageSelect = document.getElementById("language-select");
 
     // تفعيل مكتبة intl-tel-input
@@ -33,11 +35,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // التحقق مما إذا كان المستخدم قد انضم إلى مجموعة الواتساب
         if (whatsappJoinedInput.value === "false") {
-            const whatsappWindow = window.open('https://chat.whatsapp.com/E5qcOCo9Y8ULN9sQxkIqQi', '_blank');
+            window.open('https://chat.whatsapp.com/E5qcOCo9Y8ULN9sQxkIqQi', '_blank');
             joinWhatsappMessage.style.display = 'block';
+            confirmWhatsappJoinBtn.style.display = 'inline-block';
+            submitButton.style.display = 'none'; // إخفاء زر الإرسال
             return;
         }
 
+        submitForm();
+    });
+
+    confirmWhatsappJoinBtn.addEventListener('click', function() {
+        whatsappJoinedInput.value = "true";
+        submitForm();
+    });
+
+    function submitForm() {
         // جمع البيانات من النموذج
         const formData = new FormData(form);
         const data = {
@@ -104,18 +117,24 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             errorDialog.showModal();
         }
-    });
+    }
 
     closeSuccessDialogButton.addEventListener('click', function() {
         successDialog.close();
+        confirmWhatsappJoinBtn.style.display = 'none'; // إخفاء زر تأكيد الانضمام للواتساب
+        location.reload(); // إعادة تحميل الصفحة
     });
 
     closeErrorDialogButton.addEventListener('click', function() {
         errorDialog.close();
+        confirmWhatsappJoinBtn.style.display = 'none'; // إخفاء زر تأكيد الانضمام للواتساب
+        location.reload(); // إعادة تحميل الصفحة
     });
 
     closeOfflineDialogButton.addEventListener('click', function() {
         offlineDialog.close();
+        confirmWhatsappJoinBtn.style.display = 'none'; // إخفاء زر تأكيد الانضمام للواتساب
+        location.reload(); // إعادة تحميل الصفحة
     });
 
     languageSelect.addEventListener("change", function() {
